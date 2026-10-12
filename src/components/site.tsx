@@ -25,7 +25,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
       <div className="container-page flex flex-wrap items-center gap-x-4 gap-y-2 py-3 lg:h-16 lg:py-0">
         <Link to="/" className="mr-auto font-serif text-base tracking-widest whitespace-nowrap md:text-lg">{BRAND.name}</Link>
-        <nav aria-label="主導覽" className="order-last flex w-full flex-wrap items-center gap-x-4 gap-y-2 text-xs lg:order-none lg:w-auto lg:flex-nowrap lg:gap-6 lg:text-sm">
+        <nav aria-label="主導覽" className="order-last grid w-full grid-cols-3 gap-x-3 gap-y-2 text-xs lg:order-none lg:flex lg:w-auto lg:flex-nowrap lg:gap-6 lg:text-sm">
           {nav.map((n) => <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
         </nav>
         <LineButton className="px-4 py-2 text-xs lg:text-sm">LINE 諮詢</LineButton>
