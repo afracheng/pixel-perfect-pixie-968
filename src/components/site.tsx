@@ -12,7 +12,6 @@ const nav = [
 ] as const;
 
 const compactNav = nav.filter((n) => n.to === "/about" || n.to === "/contact");
-const wideOnlyNav = nav.filter((n) => n.to !== "/about" && n.to !== "/contact");
 
 export function LineButton({ children = "LINE 免費評估", className = "" }: { children?: ReactNode; className?: string }) {
   return (
@@ -26,14 +25,14 @@ export function LineButton({ children = "LINE 免費評估", className = "" }: {
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between gap-3">
+      <div className="container-page flex h-16 items-center justify-between gap-4">
         <Link to="/" className="font-serif text-base tracking-widest whitespace-nowrap md:text-lg">{BRAND.name}</Link>
-        <nav aria-label="主導覽" className="flex items-center gap-3 text-xs sm:gap-5 sm:text-sm">
+        <nav aria-label="主導覽" className="flex items-center gap-5 text-xs lg:hidden">
           {compactNav.map((n) => <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
-          <span className="hidden items-center gap-5 lg:flex">
-            {wideOnlyNav.map((n) => <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
-          </span>
-          <LineButton className="hidden px-4 py-2 lg:inline-flex">LINE 諮詢</LineButton>
+        </nav>
+        <nav aria-label="主導覽" className="hidden items-center gap-6 text-sm lg:flex">
+          {nav.map((n) => <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
+          <LineButton className="px-4 py-2">LINE 諮詢</LineButton>
         </nav>
       </div>
     </header>
