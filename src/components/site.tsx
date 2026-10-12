@@ -23,11 +23,8 @@ export function LineButton({ children = "LINE 免費評估", className = "" }: {
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
-      <div className="container-page flex flex-wrap items-center gap-x-4 gap-y-2 py-3 lg:h-16 lg:py-0">
+      <div className="container-page flex h-16 items-center">
         <Link to="/" className="mr-auto font-serif text-base tracking-widest whitespace-nowrap md:text-lg">{BRAND.name}</Link>
-        <nav aria-label="主導覽" className="order-last grid w-full grid-cols-3 gap-x-3 gap-y-2 text-xs lg:order-none lg:flex lg:w-auto lg:flex-nowrap lg:gap-6 lg:text-sm">
-          {nav.map((n) => <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
-        </nav>
         <LineButton className="px-4 py-2 text-xs lg:text-sm">LINE 諮詢</LineButton>
       </div>
     </header>
@@ -37,11 +34,15 @@ export function Header() {
 export function Footer() {
   return (
     <footer className="mt-24 bg-primary text-primary-foreground">
-      <div className="container-page grid gap-10 py-14 md:grid-cols-3">
+      <div className="container-page grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4">
         <div>
           <p className="font-serif text-xl tracking-widest">{BRAND.name}</p>
           <p className="mt-3 text-sm opacity-80">「{BRAND.motto}」</p>
           <p className="mt-3 text-sm opacity-80">服務地區：{BRAND.serviceAreas.join("、")}</p>
+        </div>
+        <div className="text-sm">
+          <p className="mb-3 eyebrow">Pages</p>
+          {nav.map((n) => <Link key={n.to} to={n.to} className="block py-1 opacity-80 hover:opacity-100">{n.label}</Link>)}
         </div>
         <div className="text-sm">
           <p className="mb-3 eyebrow">Services</p>
