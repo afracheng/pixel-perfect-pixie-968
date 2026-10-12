@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { BRAND, SERVICES } from "@/lib/site";
 
 const nav = [
@@ -11,6 +11,9 @@ const nav = [
   { to: "/contact", label: "聯絡預約" },
 ] as const;
 
+const compactNav = nav.filter((n) => n.to === "/about" || n.to === "/contact");
+const wideOnlyNav = nav.filter((n) => n.to !== "/about" && n.to !== "/contact");
+
 export function LineButton({ children = "LINE 免費評估", className = "" }: { children?: ReactNode; className?: string }) {
   return (
     <a href={BRAND.lineUrl} target="_blank" rel="noopener noreferrer"
@@ -21,33 +24,18 @@ export function LineButton({ children = "LINE 免費評估", className = "" }: {
 }
 
 export function Header() {
-  const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between">
-        <Link to="/" className="font-serif text-lg tracking-widest">{BRAND.name}</Link>
-        <nav className="hidden items-center gap-6 text-sm lg:flex">
-          <div className="group relative">
-            <span className="cursor-default">服務項目</span>
-            <div className="invisible absolute left-0 top-full w-40 border bg-card p-2 opacity-0 shadow-sm transition group-hover:visible group-hover:opacity-100">
-              {SERVICES.map((s) => (
-                <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="block px-3 py-2 hover:bg-muted">淡水{s.name}</Link>
-              ))}
-            </div>
-          </div>
-          {nav.map((n) => <Link key={n.to} to={n.to} className="hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
-          <LineButton className="px-4 py-2">LINE 諮詢</LineButton>
+      <div className="container-page flex h-16 items-center justify-between gap-3">
+        <Link to="/" className="font-serif text-base tracking-widest whitespace-nowrap md:text-lg">{BRAND.name}</Link>
+        <nav aria-label="主導覽" className="flex items-center gap-3 text-xs sm:gap-5 sm:text-sm">
+          {compactNav.map((n) => <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
+          <span className="hidden items-center gap-5 lg:flex">
+            {wideOnlyNav.map((n) => <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
+          </span>
+          <LineButton className="hidden px-4 py-2 lg:inline-flex">LINE 諮詢</LineButton>
         </nav>
-        <button className="lg:hidden text-sm" onClick={() => setOpen(!open)} aria-label="開啟選單">{open ? "關閉" : "選單"}</button>
       </div>
-      {open && (
-        <nav className="border-t bg-background lg:hidden">
-          <div className="container-page grid gap-1 py-4 text-sm">
-            {SERVICES.map((s) => <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} onClick={() => setOpen(false)} className="py-2">淡水{s.name}</Link>)}
-            {nav.map((n) => <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="py-2">{n.label}</Link>)}
-          </div>
-        </nav>
-      )}
     </header>
   );
 }
