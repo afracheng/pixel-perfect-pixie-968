@@ -11,8 +11,6 @@ const nav = [
   { to: "/contact", label: "聯絡預約" },
 ] as const;
 
-const compactNav = nav.filter((n) => n.to === "/about" || n.to === "/contact");
-
 export function LineButton({ children = "LINE 免費評估", className = "" }: { children?: ReactNode; className?: string }) {
   return (
     <a href={BRAND.lineUrl} target="_blank" rel="noopener noreferrer"
@@ -25,15 +23,12 @@ export function LineButton({ children = "LINE 免費評估", className = "" }: {
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link to="/" className="font-serif text-base tracking-widest whitespace-nowrap md:text-lg">{BRAND.name}</Link>
-        <nav aria-label="主導覽" className="flex items-center gap-5 text-xs lg:hidden">
-          {compactNav.map((n) => <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
-        </nav>
-        <nav aria-label="主導覽" className="hidden items-center gap-6 text-sm lg:flex">
+      <div className="container-page flex flex-wrap items-center gap-x-4 gap-y-2 py-3 lg:h-16 lg:py-0">
+        <Link to="/" className="mr-auto font-serif text-base tracking-widest whitespace-nowrap md:text-lg">{BRAND.name}</Link>
+        <nav aria-label="主導覽" className="order-last grid w-full grid-cols-3 gap-x-3 gap-y-2 text-xs lg:order-none lg:flex lg:w-auto lg:flex-nowrap lg:gap-6 lg:text-sm">
           {nav.map((n) => <Link key={n.to} to={n.to} className="whitespace-nowrap hover:text-champagne" activeProps={{ className: "text-champagne" }}>{n.label}</Link>)}
-          <LineButton className="px-4 py-2">LINE 諮詢</LineButton>
         </nav>
+        <LineButton className="px-4 py-2 text-xs lg:text-sm">LINE 諮詢</LineButton>
       </div>
     </header>
   );
