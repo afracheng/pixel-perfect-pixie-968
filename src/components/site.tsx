@@ -102,7 +102,7 @@ export function CtaBand() {
     <section className="container-page mt-24">
       <div className="bg-blush/60 px-6 py-14 text-center md:px-16">
         <p className="eyebrow">Free Assessment</p>
-        <h2 className="mt-2 text-2xl md:text-3xl">先傳照片，免費評估適合的眉型</h2>
+        <h2 className="mt-3 text-2xl md:text-3xl">先傳照片，免費評估適合的眉型</h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">提供素顏正面、左側、右側三張自然光照片，紋繡師會依妳的五官比例與原生眉毛給予建議。</p>
         <LineButton className="mt-8">加入 LINE 免費評估</LineButton>
       </div>
