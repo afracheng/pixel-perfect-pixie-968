@@ -35,6 +35,8 @@ function Index() {
         </div>
       </section>
 
+      <img src={studio} alt="日日眉好紋繡所乾淨的操作環境與一次性針具" width={1280} height={912} loading="lazy" className="container-page mt-16 h-56 w-full object-cover md:h-80" />
+
       <section className="container-page mt-12 md:mt-16">
         <div className="max-w-2xl border-l-2 border-champagne pl-6">
           <p className="eyebrow">Artist</p>
