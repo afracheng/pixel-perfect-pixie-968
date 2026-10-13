@@ -57,11 +57,11 @@ function Index() {
           <p className="eyebrow">Artist</p>
           <h2 className="mt-2 text-2xl md:text-3xl">紋繡師 {BRAND.artist}</h2>
           <p className="mt-4 font-serif text-lg">「{BRAND.motto}」</p>
-          <p className="mt-4 text-muted-foreground">以護理背景的衛生觀念為基礎，重視操作前的消毒與一次性針具，並在術後持續追蹤恢復狀況。每一對眉毛都從評估開始，而不是套用固定眉型。</p>
+          <p className="mt-4 text-muted-foreground">重視操作前的消毒與一次性針具，並在術後持續追蹤恢復狀況。每一對眉毛都從評估開始，而不是套用固定眉型。</p>
           <ul className="mt-5 space-y-2 text-sm">
-            <li>・護理師背景（證照資訊待確認）</li>
-            <li>・紋繡年資與競賽經歷（待業主提供可核實資料）</li>
-            <li>・術後一週至一個月追蹤</li>
+            <li>・7年紋繡經歷</li>
+            <li>・TISA紋繡講師</li>
+            <li>・TISA高級紋繡證照</li>
           </ul>
           <Link to="/about" className="mt-6 inline-block text-sm text-champagne">認識日日眉好 →</Link>
         </div>
