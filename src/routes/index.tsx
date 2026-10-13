@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import hero from "@/assets/hero.jpg";
+import heroAsset from "@/assets/hero-portrait.jpg.asset.json";
 import studio from "@/assets/studio.jpg";
 import { BRAND, SERVICES, FAQS, ARTICLES } from "@/lib/site";
 import { LineButton, CtaBand, FaqList, faqJsonLd, seo } from "@/components/site";
@@ -33,12 +33,11 @@ function Index() {
             <Link to="/pricing" className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-sm">查看價格說明</Link>
           </div>
         </div>
-        <img src={hero} alt="淡水飄眉自然眉型示意人像" width={1280} height={1600} className="aspect-[4/5] w-full object-cover" fetchPriority="high" />
+        <img src={heroAsset.url} alt="淡水飄眉・霧眉 自然眉型人像" width={1280} height={1920} className="aspect-[4/5] w-full object-cover object-[50%_38%]" fetchPriority="high" />
       </section>
 
-      <section className="container-page mt-12 grid items-center gap-10 md:grid-cols-2">
-        <img src={studio} alt="日日眉好紋繡所乾淨的操作環境與一次性針具" width={1280} height={912} loading="lazy" className="w-full object-cover" />
-        <div>
+      <section className="container-page mt-12">
+        <div className="max-w-2xl border-l-2 border-champagne pl-6">
           <p className="eyebrow">Artist</p>
           <h2 className="mt-2 text-2xl md:text-3xl">紋繡師 {BRAND.artist}</h2>
           <p className="mt-4 font-serif text-lg">「{BRAND.motto}」</p>
@@ -51,6 +50,8 @@ function Index() {
           <Link to="/about" className="mt-6 inline-block text-sm text-champagne">認識日日眉好 →</Link>
         </div>
       </section>
+
+      <img src={studio} alt="日日眉好紋繡所乾淨的操作環境與一次性針具" width={1280} height={912} loading="lazy" className="container-page mt-16 h-56 w-full object-cover md:h-80" />
 
       <section className="container-page mt-24">
         <p className="eyebrow">Services</p>
