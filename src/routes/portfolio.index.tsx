@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SERVICES } from "@/lib/site";
 import { PageHead, CtaBand, TbdNote, seo } from "@/components/site";
 
-export const Route = createFileRoute("/portfolio")({
+export const Route = createFileRoute("/portfolio/")({
   head: () => seo("作品案例｜淡水飄眉・霧眉・霧唇真實案例｜日日眉好紋繡所", "日日眉好紋繡所的飄眉、霧眉、飄霧眉、紋眼線與霧唇作品案例，說明顧客需求與眉型設計考量。", "/portfolio"),
   component: Portfolio,
 });
