@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { type ReactNode } from "react";
+import logoAsset from "@/assets/logo.png.asset.json";
 import { BRAND, SERVICES } from "@/lib/site";
 
 const nav = [
@@ -24,7 +25,10 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
       <div className="container-page flex h-16 items-center">
-        <Link to="/" className="mr-auto font-serif text-base tracking-widest whitespace-nowrap md:text-lg">{BRAND.name}</Link>
+        <Link to="/" className="mr-auto flex items-center gap-3 whitespace-nowrap">
+          <img src={logoAsset.url} alt="" width={853} height={435} className="h-8 w-auto md:h-9" />
+          <span className="font-serif text-base tracking-widest md:text-lg">{BRAND.name}</span>
+        </Link>
         <LineButton className="px-4 py-2 text-xs lg:text-sm">LINE 諮詢</LineButton>
       </div>
     </header>
