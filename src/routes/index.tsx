@@ -33,7 +33,7 @@ function Index() {
             <Link to="/pricing" className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-sm">查看價格說明</Link>
           </div>
         </div>
-        <img src={heroAsset.url} alt="淡水飄眉・霧眉 自然眉型人像" width={1280} height={1920} className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
+        <img src={heroAsset.url} alt="淡水飄眉・霧眉 自然眉型人像" width={1280} height={1920} className="aspect-[4/5] w-full object-cover object-[50%_38%]" fetchPriority="high" />
       </section>
 
       <section className="container-page mt-12">
