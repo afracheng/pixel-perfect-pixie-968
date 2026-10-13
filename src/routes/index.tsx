@@ -37,7 +37,7 @@ function Index() {
       </section>
 
       <section className="container-page mt-12">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl border-l-2 border-champagne pl-6">
           <p className="eyebrow">Artist</p>
           <h2 className="mt-2 text-2xl md:text-3xl">紋繡師 {BRAND.artist}</h2>
           <p className="mt-4 font-serif text-lg">「{BRAND.motto}」</p>
