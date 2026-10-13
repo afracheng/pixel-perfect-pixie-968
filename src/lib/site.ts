@@ -46,7 +46,7 @@ const commonCare = [
 export const SERVICES: Service[] = [
   {
     slug: "microblading",
-    name: "飄眉",
+    name: "飄眉(線條眉)",
     en: "Microblading",
     title: "淡水飄眉推薦｜根根分明的自然眉型｜日日眉好紋繡所",
     description: "日日眉好紋繡所位於新北市淡水，提供個人化飄眉設計，從眉型比例、毛流方向到術後照護細心規劃。可先 LINE 免費照片評估。",
@@ -96,7 +96,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "eyeliner",
-    name: "紋眼線",
+    name: "沙霧感眼線",
     en: "Eyeliner",
     title: "淡水紋眼線｜自然放大眼神｜日日眉好紋繡所",
     description: "新北淡水紋眼線服務，依眼型設計內眼線或美瞳線，自然提升眼神。說明操作前評估、衛生流程與術後照護注意事項。",
@@ -112,7 +112,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "lip-blush",
-    name: "霧唇",
+    name: "減法霧唇",
     en: "Lip Blush",
     title: "淡水霧唇｜自然唇色與唇形修飾｜日日眉好紋繡所",
     description: "新北淡水霧唇服務，依膚色與原生唇色調配色調，修飾唇形與氣色。日日眉好紋繡所說明術前評估、恢復期與照護重點。",
