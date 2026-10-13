@@ -95,7 +95,7 @@ function Index() {
 
       <section className="container-page mt-24">
         <p className="eyebrow">Process</p>
-        <h2 className="mt-2 text-2xl md:text-3xl">從評估到術後追蹤</h2>
+        <h2 className="mt-2 text-2xl md:text-3xl">眉型免費評估</h2>
         <ol className="mt-8 grid gap-6 md:grid-cols-4">
           {steps.map((s, i) => (
             <li key={s.t} className="border-t-2 border-champagne pt-5">
