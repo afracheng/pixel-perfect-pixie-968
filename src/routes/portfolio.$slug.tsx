@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getService } from "@/lib/site";
 import { CtaBand, PageHead, seo, TbdNote } from "@/components/site";
+import { CaseComparison } from "@/components/case-comparison";
+import { PORTFOLIO_CASES } from "@/lib/portfolio";
 
 export const Route = createFileRoute("/portfolio/$slug")({
   loader: ({ params }) => {
@@ -31,7 +33,8 @@ function PortfolioCategory() {
     <>
       <PageHead eyebrow={service.en} title={`${service.name}作品案例`} crumbs={[{ label: "作品案例", to: "/portfolio" }, { label: `${service.name}案例` }]} />
       <section className="container-page py-16">
-        <TbdNote>{service.name}真實案例整理中，取得顧客授權後上架。</TbdNote>
+        <TbdNote>僅刊登取得顧客授權的真實案例，保留原始照片；個人膚況與恢復結果因人而異。</TbdNote>
+        <CaseComparison key={service.slug} cases={PORTFOLIO_CASES.filter((item) => item.serviceSlug === service.slug)} />
         <div className="mt-8 flex flex-wrap gap-6 text-sm text-champagne">
           <Link to="/portfolio">← 返回作品案例</Link>
           <Link to="/services/$slug" params={{ slug: service.slug }}>了解{service.name} →</Link>

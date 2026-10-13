@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Portfolio uses an index category directory and a dynamic category leaf route; keep category browsing separate so each service has its own URL and metadata.
+- Portfolio comparisons read a typed, consented case catalogue, with no fabricated fallback cases; this keeps before/after photos and cross-client comparisons grounded in verified work.
