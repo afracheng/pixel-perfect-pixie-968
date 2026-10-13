@@ -36,22 +36,7 @@ function Index() {
         <img src={hero} alt="淡水飄眉自然眉型示意人像" width={1280} height={1600} className="aspect-[4/5] w-full object-cover" fetchPriority="high" />
       </section>
 
-      <section className="container-page mt-12">
-        <p className="eyebrow">Services</p>
-        <h2 className="mt-2 text-2xl md:text-3xl">服務項目</h2>
-        <div className="mt-8 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
-          {SERVICES.map((s) => (
-            <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="group bg-card p-6 transition hover:bg-secondary">
-              <p className="eyebrow">{s.en}</p>
-              <h3 className="mt-2 text-xl">{s.name}</h3>
-              <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">{s.features[0]}</p>
-              <span className="mt-4 inline-block text-sm text-champagne">了解更多 →</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="container-page mt-24 grid items-center gap-10 md:grid-cols-2">
+      <section className="container-page mt-12 grid items-center gap-10 md:grid-cols-2">
         <img src={studio} alt="日日眉好紋繡所乾淨的操作環境與一次性針具" width={1280} height={912} loading="lazy" className="w-full object-cover" />
         <div>
           <p className="eyebrow">Artist</p>
@@ -66,6 +51,22 @@ function Index() {
           <Link to="/about" className="mt-6 inline-block text-sm text-champagne">認識日日眉好 →</Link>
         </div>
       </section>
+
+      <section className="container-page mt-24">
+        <p className="eyebrow">Services</p>
+        <h2 className="mt-2 text-2xl md:text-3xl">服務項目</h2>
+        <div className="mt-8 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
+          {SERVICES.map((s) => (
+            <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="group bg-card p-6 transition hover:bg-secondary">
+              <p className="eyebrow">{s.en}</p>
+              <h3 className="mt-2 text-xl">{s.name}</h3>
+              <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">{s.features[0]}</p>
+              <span className="mt-4 inline-block text-sm text-champagne">了解更多 →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
 
       <section className="container-page mt-24">
         <p className="eyebrow">Process</p>
