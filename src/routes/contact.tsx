@@ -21,9 +21,9 @@ export const Route = createFileRoute("/contact")({
           <h2 className="text-xl">工作室資訊</h2>
           <p>地址：{BRAND.address}</p>
           <p>服務地區：{BRAND.serviceAreas.join("、")}</p>
-          <p>LINE：{BRAND.lineId}</p>
+          <p>LINE：<a href={BRAND.lineUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 break-all">{BRAND.lineUrl}</a></p>
           <p>{BRAND.hours}</p>
-          <TbdNote>詳細地址、交通方式與營業時間待業主確認後更新，並與 Google 商家檔案保持一致。</TbdNote>
+          <TbdNote>交通方式與停車資訊待補充，並與 Google 商家檔案保持一致。</TbdNote>
         </address>
       </div>
     </>
