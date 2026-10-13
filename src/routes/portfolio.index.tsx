@@ -15,14 +15,14 @@ function Portfolio() {
         <TbdNote>案例照片僅使用取得顧客授權的真實照片，不使用修圖後效果冒充操作成果。案例整理中，敬請期待。</TbdNote>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
-            <div key={s.slug} className="border bg-card">
+            <Link key={s.slug} to="/portfolio/$slug" params={{ slug: s.slug }} className="block border bg-card transition hover:border-champagne focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">
               <div className="flex aspect-[4/3] items-center justify-center bg-secondary text-sm text-muted-foreground">{s.name}案例照片（授權後上架）</div>
               <div className="p-5">
                 <h2 className="text-lg">{s.name}案例</h2>
                 <p className="mt-2 text-sm text-muted-foreground">顧客需求／設計考量／術後追蹤</p>
-                <Link to="/services/$slug" params={{ slug: s.slug }} className="mt-3 inline-block text-sm text-champagne">了解{s.name} →</Link>
+                <span className="mt-3 inline-block text-sm text-champagne">查看{s.name}案例 →</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

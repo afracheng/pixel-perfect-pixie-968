@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Portfolio uses an index category directory and a dynamic category leaf route; keep category browsing separate so each service has its own URL and metadata.
