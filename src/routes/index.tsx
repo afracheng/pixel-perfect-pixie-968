@@ -22,6 +22,21 @@ const steps = [
 function Index() {
   return (
     <>
+      <section className="container-page pt-12 md:pt-20">
+        <div className="max-w-2xl border-l-2 border-champagne pl-6">
+          <p className="eyebrow">Artist</p>
+          <h2 className="mt-2 text-2xl md:text-3xl">紋繡師 {BRAND.artist}</h2>
+          <p className="mt-4 font-serif text-lg">「{BRAND.motto}」</p>
+          <p className="mt-4 text-muted-foreground">重視操作前的消毒與一次性針具，並在術後持續追蹤恢復狀況。每一對眉毛都從評估開始，而不是套用固定眉型。</p>
+          <ul className="mt-5 space-y-2 text-sm">
+            <li>・7年紋繡經歷</li>
+            <li>・TISA紋繡講師</li>
+            <li>・TISA高級紋繡證照</li>
+          </ul>
+          <Link to="/about" className="mt-6 inline-block text-sm text-champagne">認識日日眉好 →</Link>
+        </div>
+      </section>
+
       <section className="container-page grid items-center gap-10 py-12 md:grid-cols-2 md:py-20">
         <div className="fade-up">
           <p className="eyebrow">Tamsui · New Taipei</p>
@@ -36,20 +51,6 @@ function Index() {
         <img src={heroAsset.url} alt="淡水飄眉・霧眉 自然眉型人像" width={1280} height={1920} className="aspect-[4/5] w-full object-cover object-[50%_38%]" fetchPriority="high" />
       </section>
 
-      <section className="container-page mt-12">
-        <div className="max-w-2xl border-l-2 border-champagne pl-6">
-          <p className="eyebrow">Artist</p>
-          <h2 className="mt-2 text-2xl md:text-3xl">紋繡師 {BRAND.artist}</h2>
-          <p className="mt-4 font-serif text-lg">「{BRAND.motto}」</p>
-          <p className="mt-4 text-muted-foreground">重視操作前的消毒與一次性針具，並在術後持續追蹤恢復狀況。每一對眉毛都從評估開始，而不是套用固定眉型。</p>
-          <ul className="mt-5 space-y-2 text-sm">
-            <li>・7年紋繡經歷</li>
-            <li>・TISA紋繡講師</li>
-            <li>・TISA高級紋繡證照</li>
-          </ul>
-          <Link to="/about" className="mt-6 inline-block text-sm text-champagne">認識日日眉好 →</Link>
-        </div>
-      </section>
 
       <img src={studio} alt="日日眉好紋繡所乾淨的操作環境與一次性針具" width={1280} height={912} loading="lazy" className="container-page mt-16 h-56 w-full object-cover md:h-80" />
 
