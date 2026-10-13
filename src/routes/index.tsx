@@ -56,7 +56,6 @@ function Index() {
         <img src={heroAsset.url} alt="淡水飄眉・霧眉 自然眉型人像" width={1280} height={1920} className="mx-auto aspect-[4/5] w-full max-w-lg object-cover object-[50%_38%]" loading="lazy" />
       </section>
 
-
       <section className="container-page mt-24">
         <p className="eyebrow">Services</p>
         <h2 className="mt-2 text-2xl md:text-3xl">服務項目</h2>
