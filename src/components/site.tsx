@@ -51,7 +51,7 @@ export function Footer() {
         <address className="not-italic text-sm opacity-80 space-y-1">
           <p className="mb-3 eyebrow opacity-100">Contact</p>
           <p>地址：{BRAND.address}</p>
-          <p>LINE：{BRAND.lineId}</p>
+          <p>LINE：<a href={BRAND.lineUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 break-all">{BRAND.lineUrl}</a></p>
           <p>{BRAND.hours}</p>
           <p className="flex gap-4 pt-2"><a href={BRAND.instagram}>Instagram</a><a href={BRAND.facebook}>Facebook</a></p>
         </address>

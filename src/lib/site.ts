@@ -8,7 +8,6 @@ export const BRAND = {
   address: "新北市淡水區紅樹林路56號",
   serviceAreas: ["淡水區", "八里區", "蘆洲區", "新北市", "台北市"],
   lineUrl: "https://lin.ee/sZqwBY6",
-  lineId: "@待確認",
   instagram: "https://www.instagram.com/", // 待確認
   facebook: "https://www.facebook.com/", // 待確認
   hours: "採預約制：11:30~18:00 (每周三公休)",
