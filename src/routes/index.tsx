@@ -103,7 +103,7 @@ function Index() {
               <h3 className="mt-2 text-lg">{s.t}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
               {i === steps.length - 1 && (
-                <LineButton className="mt-5 px-5 py-2 text-xs">點我免費評估</LineButton>
+                <LineButton className="mt-10 px-5 py-2 text-xs">點我免費評估</LineButton>
               )}
             </li>
           ))}
