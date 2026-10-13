@@ -7,7 +7,7 @@ export const BRAND = {
   area: "新北市淡水區",
   address: "新北市淡水區紅樹林路56號",
   serviceAreas: ["淡水區", "八里區", "蘆洲區", "新北市", "台北市"],
-  lineUrl: "https://line.me/", // 待確認：官方 LINE 連結
+  lineUrl: "https://lin.ee/sZqwBY6",
   lineId: "@待確認",
   instagram: "https://www.instagram.com/", // 待確認
   facebook: "https://www.facebook.com/", // 待確認
