@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import studio from "@/assets/studio.jpg";
 import { BRAND } from "@/lib/site";
-import { PageHead, CtaBand, TbdNote, seo } from "@/components/site";
+import { PageHead, CtaBand, seo } from "@/components/site";
 
 export const Route = createFileRoute("/about")({
   head: () => seo("認識日日眉好｜淡水紋繡師法兒的專業與理念", "認識新北淡水日日眉好紋繡所與紋繡師法兒：護理背景的衛生觀念、個人化眉型設計與負責的術後追蹤。", "/about"),
@@ -19,12 +19,10 @@ function About() {
           <p>相信好的眉型不是複製流行，而是找出最適合每個人五官與氣質的比例。每一次操作都從仔細的評估與溝通開始。</p>
           <h3>專業背景</h3>
           <ul>
-            <li>護理師背景（執照資訊待確認）</li>
-            <li>紋繡年資：待確認</li>
-            <li>競賽經歷：待業主提供可核實的獎項名稱、年份與證明</li>
-            <li>專業進修：待確認</li>
+            <li>7年紋繡經歷</li>
+            <li>TISA紋繡講師</li>
+            <li>TISA高級紋繡證照</li>
           </ul>
-          <TbdNote>為確保資訊真實可信，以上資歷將在取得可驗證資料後更新，不使用未經證實的宣稱。</TbdNote>
           <h3>衛生操作理念</h3>
           <ul>
             <li>針具一次性使用，並於顧客面前拆封</li>
