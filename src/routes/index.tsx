@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import hero from "@/assets/hero.jpg";
+import heroAsset from "@/assets/hero-portrait.jpg.asset.json";
 import studio from "@/assets/studio.jpg";
 import { BRAND, SERVICES, FAQS, ARTICLES } from "@/lib/site";
 import { LineButton, CtaBand, FaqList, faqJsonLd, seo } from "@/components/site";
@@ -33,7 +33,7 @@ function Index() {
             <Link to="/pricing" className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-sm">查看價格說明</Link>
           </div>
         </div>
-        <img src={hero} alt="淡水飄眉自然眉型示意人像" width={1280} height={1600} className="aspect-[4/5] w-full object-cover" fetchPriority="high" />
+        <img src={heroAsset.url} alt="淡水飄眉・霧眉 自然眉型人像" width={1280} height={1920} className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
       </section>
 
       <section className="container-page mt-12">
