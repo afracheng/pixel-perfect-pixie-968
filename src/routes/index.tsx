@@ -35,6 +35,8 @@ function Index() {
         </div>
       </section>
 
+      <img src={studio} alt="日日眉好紋繡所乾淨的操作環境與一次性針具" width={1280} height={912} loading="lazy" className="container-page mt-16 h-56 w-full object-cover md:h-80" />
+
       <section className="container-page mt-12 md:mt-16">
         <div className="max-w-2xl border-l-2 border-champagne pl-6">
           <p className="eyebrow">Artist</p>
@@ -53,8 +55,6 @@ function Index() {
       <section className="container-page mt-12 md:mt-16">
         <img src={heroAsset.url} alt="淡水飄眉・霧眉 自然眉型人像" width={1280} height={1920} className="mx-auto aspect-[4/5] w-full max-w-lg object-cover object-[50%_38%]" loading="lazy" />
       </section>
-
-      <img src={studio} alt="日日眉好紋繡所乾淨的操作環境與一次性針具" width={1280} height={912} loading="lazy" className="container-page mt-16 h-56 w-full object-cover md:h-80" />
 
       <section className="container-page mt-24">
         <p className="eyebrow">Services</p>
