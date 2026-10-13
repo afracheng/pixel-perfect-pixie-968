@@ -27,7 +27,7 @@ function Index() {
           <p className="eyebrow">Tamsui · New Taipei</p>
           <h1 className="mt-4 text-3xl leading-snug md:text-5xl">新北淡水<br />飄眉・霧眉推薦<span className="mt-3 block text-xl text-muted-foreground md:text-2xl">日日眉好紋繡所</span></h1>
           <p className="mt-6 max-w-md text-muted-foreground">從眉型比例、個人風格到術後照護，細心規劃每一個細節，打造適合妳的自然眉型。</p>
-          <p className="mt-4 text-sm">飄眉｜霧眉｜飄霧眉｜紋眼線｜霧唇</p>
+          <p className="mt-4 text-sm">飄眉｜霧眉｜飄霧眉｜沙霧感眼線｜減法霧唇</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <LineButton>LINE 免費眉型評估</LineButton>
             <Link to="/pricing" className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-sm">查看價格說明</Link>
