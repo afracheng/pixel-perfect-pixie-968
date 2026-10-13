@@ -71,7 +71,6 @@ function Index() {
         </div>
       </section>
 
-
       <section className="container-page mt-24 grid gap-12 md:grid-cols-[1fr_2fr]">
         <div>
           <p className="eyebrow">FAQ</p>
