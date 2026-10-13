@@ -71,21 +71,6 @@ function Index() {
         </div>
       </section>
 
-
-      <section className="container-page mt-24">
-        <p className="eyebrow">Process</p>
-        <h2 className="mt-2 text-2xl md:text-3xl">從評估到術後追蹤</h2>
-        <ol className="mt-8 grid gap-6 md:grid-cols-4">
-          {steps.map((s, i) => (
-            <li key={s.t} className="border-t-2 border-champagne pt-5">
-              <span className="font-serif text-3xl text-champagne">0{i + 1}</span>
-              <h3 className="mt-2 text-lg">{s.t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
       <section className="container-page mt-24 grid gap-12 md:grid-cols-[1fr_2fr]">
         <div>
           <p className="eyebrow">FAQ</p>
@@ -106,6 +91,20 @@ function Index() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="container-page mt-24">
+        <p className="eyebrow">Process</p>
+        <h2 className="mt-2 text-2xl md:text-3xl">從評估到術後追蹤</h2>
+        <ol className="mt-8 grid gap-6 md:grid-cols-4">
+          {steps.map((s, i) => (
+            <li key={s.t} className="border-t-2 border-champagne pt-5">
+              <span className="font-serif text-3xl text-champagne">0{i + 1}</span>
+              <h3 className="mt-2 text-lg">{s.t}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="container-page mt-24 grid gap-6 md:grid-cols-2">
