@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroAsset from "@/assets/hero-portrait.jpg.asset.json";
 import studio from "@/assets/studio.jpg";
-import { BRAND, SERVICES, FAQS, ARTICLES } from "@/lib/site";
+import { BRAND, CONCERNS, FAQS, ARTICLES } from "@/lib/site";
 import { LineButton, CtaBand, FaqList, faqJsonLd, seo } from "@/components/site";
 
 export const Route = createFileRoute("/")({
@@ -57,17 +57,25 @@ function Index() {
       </section>
 
       <section className="container-page mt-24">
-        <p className="eyebrow">Services</p>
-        <h2 className="mt-2 text-2xl md:text-3xl">服務項目</h2>
-        <div className="mt-8 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
-          {SERVICES.map((s) => (
-            <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="group bg-card p-6 transition hover:bg-secondary">
-              <p className="eyebrow">{s.en}</p>
-              <h3 className="mt-2 text-xl">{s.name}</h3>
-              <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">{s.features[0]}</p>
-              <span className="mt-4 inline-block text-sm text-champagne">了解更多 →</span>
-            </Link>
-          ))}
+        <p className="eyebrow">Concerns</p>
+        <h2 className="mt-2 text-2xl md:text-3xl">妳的眉毛狀況</h2>
+        <div className="mt-8 grid gap-px bg-border md:grid-cols-3">
+          {CONCERNS.map((c) => {
+            const card = (
+              <>
+                <span className="font-serif text-3xl text-champagne">{c.no}</span>
+                <h3 className="mt-2 text-xl">{c.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground">{c.desc}</p>
+                <p className="mt-4 text-sm">適合：{c.fit}</p>
+                <span className="mt-4 inline-block text-sm text-champagne">了解更多 →</span>
+              </>
+            );
+            return c.serviceSlug ? (
+              <Link key={c.no} to="/services/$slug" params={{ slug: c.serviceSlug }} className="group bg-card p-6 transition hover:bg-secondary">{card}</Link>
+            ) : (
+              <Link key={c.no} to="/contact" className="group bg-card p-6 transition hover:bg-secondary">{card}</Link>
+            );
+          })}
         </div>
       </section>
 
