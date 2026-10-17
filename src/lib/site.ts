@@ -129,40 +129,6 @@ export const SERVICES: Service[] = [
 
 export const getService = (slug: string) => SERVICES.find((s) => s.slug === slug);
 
-export type Concern = {
-  no: string;
-  title: string;
-  en: string;
-  desc: string;
-  fit: string;
-  serviceSlug?: string;
-};
-
-export const CONCERNS: Concern[] = [
-  {
-    no: "01",
-    title: "眉毛稀疏",
-    en: "Sparse Brows",
-    desc: "原生眉毛較稀疏、眉面留有明顯空隙，素顏時容易顯得沒有精神。",
-    fit: "飄眉(線條眉)、飄霧眉",
-    serviceSlug: "microblading",
-  },
-  {
-    no: "02",
-    title: "眉毛斷尾",
-    en: "Broken Tail",
-    desc: "眉尾缺損或左右不對稱，自己畫眉時總是要花很多時間補齊。",
-    fit: "飄霧眉",
-    serviceSlug: "combo-brows",
-  },
-  {
-    no: "03",
-    title: "舊眉重修",
-    en: "Brow Correction",
-    desc: "過去的紋眉顏色偏紅偏藍、眉型與現在不協調，想調整成自然的樣子。",
-    fit: "先傳照片評估",
-  },
-];
 
 export const FAQS = [
   { q: "飄眉和霧眉有什麼差別？", a: "飄眉以線條模擬毛流，呈現素顏感；霧眉以點狀上色，呈現柔和妝感。膚質、原生眉毛與喜好都會影響選擇。" },
