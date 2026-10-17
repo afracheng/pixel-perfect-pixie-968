@@ -129,7 +129,6 @@ export const SERVICES: Service[] = [
 
 export const getService = (slug: string) => SERVICES.find((s) => s.slug === slug);
 
-
 export const FAQS = [
   { q: "飄眉和霧眉有什麼差別？", a: "飄眉以線條模擬毛流，呈現素顏感；霧眉以點狀上色，呈現柔和妝感。膚質、原生眉毛與喜好都會影響選擇。" },
   { q: "第一次做紋繡應該選哪一種？", a: "沒有絕對答案。建議先傳照片免費評估，依原生眉、膚況與生活習慣再決定飄眉、霧眉或飄霧眉。" },
