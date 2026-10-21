@@ -71,15 +71,19 @@ export type Crumb = {
   hash?: string;
 };
 
+const crumbCls = "underline-offset-4 hover:text-champagne hover:underline";
+
 export function Crumbs({ items }: { items: Crumb[] }) {
   return (
     <nav aria-label="麵包屑" className="text-xs text-muted-foreground">
-      <Link to="/" className="underline-offset-4 hover:text-champagne hover:underline">首頁</Link>
+      <Link to="/" className={crumbCls}>首頁</Link>
       {items.map((i) => (
         <span key={i.label}>
           {" ／ "}
-          {i.to ? (
-            <Link to={i.to} hash={i.hash} className="underline-offset-4 hover:text-champagne hover:underline">{i.label}</Link>
+          {i.to && i.hash ? (
+            <Link to={i.to} hash={i.hash} className={crumbCls}>{i.label}</Link>
+          ) : i.to ? (
+            <Link to={i.to} className={crumbCls}>{i.label}</Link>
           ) : (
             <span aria-current="page">{i.label}</span>
           )}
