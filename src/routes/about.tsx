@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import studio from "@/assets/studio.jpg";
+import heroAsset from "@/assets/hero-portrait.jpg.asset.json";
 import { BRAND } from "@/lib/site";
 import { PageHead, CtaBand, seo } from "@/components/site";
 
@@ -12,8 +13,8 @@ function About() {
   return (
     <>
       <PageHead eyebrow="About" title="認識日日眉好" intro={`「${BRAND.motto}」日日眉好紋繡所位於新北市淡水區，由紋繡師${BRAND.artist}親自評估與操作。`} crumbs={[{ label: "認識日日眉好" }]} />
-      <div className="container-page grid gap-12 py-16 md:grid-cols-2">
-        <img src={studio} alt="日日眉好紋繡所工作室環境" width={1280} height={912} loading="lazy" className="w-full object-cover" />
+      <div className="container-page grid gap-12 py-16 md:grid-cols-[1fr_1.4fr]">
+        <img src={heroAsset.url} alt="紋繡師法兒本人｜日日眉好紋繡所" width={1280} height={1920} loading="lazy" className="aspect-[4/5] w-full object-cover object-[50%_38%]" />
         <div className="prose-zh">
           <h2>紋繡師 {BRAND.artist}</h2>
           <p>相信好的眉型不是複製流行，而是找出最適合每個人五官與氣質的比例。每一次操作都從仔細的評估與溝通開始。</p>
@@ -33,6 +34,7 @@ function About() {
           <p>術後一週至一個月內透過 LINE 關心恢復狀況，協助判斷照護是否得宜；若有異常狀況，會建議盡速就醫。</p>
         </div>
       </div>
+      <img src={studio} alt="日日眉好紋繡所工作室環境" width={1280} height={912} loading="lazy" className="container-page h-56 w-full object-cover md:h-80" />
       <CtaBand />
     </>
   );
