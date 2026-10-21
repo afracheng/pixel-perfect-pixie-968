@@ -71,7 +71,7 @@ export type Crumb = {
   hash?: string;
 };
 
-const crumbCls = "underline-offset-4 hover:text-champagne hover:underline";
+const crumbCls = "text-primary underline decoration-champagne decoration-1 underline-offset-4 hover:text-champagne";
 
 export function Crumbs({ items }: { items: Crumb[] }) {
   return (
