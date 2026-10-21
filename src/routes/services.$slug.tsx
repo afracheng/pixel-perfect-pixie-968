@@ -27,7 +27,7 @@ function ServicePage() {
   const others = SERVICES.filter((o) => o.slug !== s.slug);
   return (
     <>
-      <PageHead eyebrow={s.en} title={`淡水${s.name}｜日日眉好紋繡所`} intro={s.summary} crumbs={[{ label: "服務項目" }, { label: s.name }]} />
+      <PageHead eyebrow={s.en} title={`淡水${s.name}｜日日眉好紋繡所`} intro={s.summary} crumbs={[{ label: "服務項目", to: "/", hash: "services" }, { label: s.name }]} />
       <div className="container-page grid gap-14 py-16 md:grid-cols-[2fr_1fr]">
         <article className="prose-zh">
           <h2>{s.name}適合什麼需求？</h2>

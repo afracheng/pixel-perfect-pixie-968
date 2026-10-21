@@ -65,16 +65,35 @@ export function Footer() {
   );
 }
 
-export function Crumbs({ items }: { items: { label: string; to?: string }[] }) {
+export type Crumb = {
+  label: string;
+  to?: "/" | "/portfolio" | "/knowledge";
+  hash?: string;
+};
+
+const crumbCls = "text-primary underline decoration-champagne decoration-1 underline-offset-4 hover:text-champagne";
+
+export function Crumbs({ items }: { items: Crumb[] }) {
   return (
     <nav aria-label="麵包屑" className="text-xs text-muted-foreground">
-      <Link to="/">首頁</Link>
-      {items.map((i) => <span key={i.label}> ／ {i.to ? <a href={i.to}>{i.label}</a> : <span aria-current="page">{i.label}</span>}</span>)}
+      <Link to="/" className={crumbCls}>首頁</Link>
+      {items.map((i) => (
+        <span key={i.label}>
+          {" ／ "}
+          {i.to && i.hash ? (
+            <Link to={i.to} hash={i.hash} className={crumbCls}>{i.label}</Link>
+          ) : i.to ? (
+            <Link to={i.to} className={crumbCls}>{i.label}</Link>
+          ) : (
+            <span aria-current="page">{i.label}</span>
+          )}
+        </span>
+      ))}
     </nav>
   );
 }
 
-export function PageHead({ eyebrow, title, intro, crumbs }: { eyebrow: string; title: string; intro?: string; crumbs: { label: string; to?: string }[] }) {
+export function PageHead({ eyebrow, title, intro, crumbs }: { eyebrow: string; title: string; intro?: string; crumbs: Crumb[] }) {
   return (
     <section className="border-b bg-secondary/60">
       <div className="container-page py-14 md:py-20 fade-up">
