@@ -65,11 +65,26 @@ export function Footer() {
   );
 }
 
-export function Crumbs({ items }: { items: { label: string; to?: string }[] }) {
+export type Crumb = {
+  label: string;
+  to?: "/" | "/portfolio" | "/knowledge";
+  hash?: string;
+};
+
+export function Crumbs({ items }: { items: Crumb[] }) {
   return (
     <nav aria-label="麵包屑" className="text-xs text-muted-foreground">
-      <Link to="/">首頁</Link>
-      {items.map((i) => <span key={i.label}> ／ {i.to ? <a href={i.to}>{i.label}</a> : <span aria-current="page">{i.label}</span>}</span>)}
+      <Link to="/" className="underline-offset-4 hover:text-champagne hover:underline">首頁</Link>
+      {items.map((i) => (
+        <span key={i.label}>
+          {" ／ "}
+          {i.to ? (
+            <Link to={i.to} hash={i.hash} className="underline-offset-4 hover:text-champagne hover:underline">{i.label}</Link>
+          ) : (
+            <span aria-current="page">{i.label}</span>
+          )}
+        </span>
+      ))}
     </nav>
   );
 }
