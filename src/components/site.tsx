@@ -89,7 +89,7 @@ export function Crumbs({ items }: { items: Crumb[] }) {
   );
 }
 
-export function PageHead({ eyebrow, title, intro, crumbs }: { eyebrow: string; title: string; intro?: string; crumbs: { label: string; to?: string }[] }) {
+export function PageHead({ eyebrow, title, intro, crumbs }: { eyebrow: string; title: string; intro?: string; crumbs: Crumb[] }) {
   return (
     <section className="border-b bg-secondary/60">
       <div className="container-page py-14 md:py-20 fade-up">
