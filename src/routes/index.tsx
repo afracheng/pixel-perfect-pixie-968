@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroAsset from "@/assets/hero-portrait.jpg.asset.json";
-import { assetUrl } from "@/lib/utils";
+import heroPortrait from "@/assets/hero-portrait.jpg";
 import studio from "@/assets/studio.jpg";
 import { BRAND, SERVICES, FAQS, ARTICLES } from "@/lib/site";
 import { LineButton, CtaBand, FaqList, faqJsonLd, seo } from "@/components/site";
@@ -54,7 +53,7 @@ function Index() {
       </section>
 
       <section className="container-page mt-12 md:mt-16">
-        <img src={assetUrl(heroAsset)} alt="紋繡師法兒本人｜日日眉好紋繡所" width={1280} height={1920} className="mx-auto aspect-[4/5] w-full max-w-lg object-cover object-[50%_38%]" loading="lazy" />
+        <img src={heroPortrait} alt="紋繡師法兒本人｜日日眉好紋繡所" width={1280} height={1920} className="mx-auto aspect-[4/5] w-full max-w-lg object-cover object-[50%_38%]" loading="lazy" />
       </section>
 
       <section id="services" className="container-page mt-24 scroll-mt-24">

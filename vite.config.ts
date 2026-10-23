@@ -20,7 +20,7 @@ export default defineConfig(
           router: { basepath: pagesBase },
           spa: { enabled: true },
           prerender: { enabled: true, crawlLinks: true, failOnError: false },
-          pages: [{ path: "/sitemap.xml", prerender: { enabled: false } }],
+          pages: [{ path: "/sitemap.xml" }, { path: "/robots.txt" }],
         },
       }
     : {

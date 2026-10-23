@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import studio from "@/assets/studio.jpg";
-import heroAsset from "@/assets/hero-portrait.jpg.asset.json";
-import { assetUrl } from "@/lib/utils";
+import heroPortrait from "@/assets/hero-portrait.jpg";
 import { BRAND } from "@/lib/site";
 import { PageHead, CtaBand, seo } from "@/components/site";
 
@@ -15,7 +14,7 @@ function About() {
     <>
       <PageHead eyebrow="About" title="認識日日眉好" intro={`「${BRAND.motto}」日日眉好紋繡所位於新北市淡水區，由紋繡師${BRAND.artist}親自評估與操作。`} crumbs={[{ label: "認識日日眉好" }]} />
       <div className="container-page grid gap-12 py-16 md:grid-cols-[1fr_1.4fr]">
-        <img src={assetUrl(heroAsset)} alt="紋繡師法兒本人｜日日眉好紋繡所" width={1280} height={1920} loading="lazy" className="aspect-[4/5] w-full object-cover object-[50%_38%]" />
+        <img src={heroPortrait} alt="紋繡師法兒本人｜日日眉好紋繡所" width={1280} height={1920} loading="lazy" className="aspect-[4/5] w-full object-cover object-[50%_38%]" />
         <div className="prose-zh">
           <h2>紋繡師 {BRAND.artist}</h2>
           <p>相信好的眉型不是複製流行，而是找出最適合每個人五官與氣質的比例。每一次操作都從仔細的評估與溝通開始。</p>
