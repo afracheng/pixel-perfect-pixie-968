@@ -12,8 +12,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Header, Footer } from "@/components/site";
-import { BRAND, SERVICES } from "@/lib/site";
+import { Header, Footer, shareImage } from "@/components/site";
+import { BRAND, SERVICES, SITE_URL, canonicalUrl } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -43,12 +43,18 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 const orgLd = {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
+  "@id": `${SITE_URL}/#business`,
   name: BRAND.name,
+  url: canonicalUrl("/"),
+  image: shareImage,
   slogan: BRAND.motto,
-  address: { "@type": "PostalAddress", addressLocality: "淡水區", addressRegion: "新北市", addressCountry: "TW" },
+  founder: { "@type": "Person", name: BRAND.artist, jobTitle: "紋繡師" },
+  address: { "@type": "PostalAddress", streetAddress: "紅樹林路56號", addressLocality: "淡水區", addressRegion: "新北市", addressCountry: "TW" },
+  openingHoursSpecification: { "@type": "OpeningHoursSpecification", dayOfWeek: BRAND.openingHours.days, opens: BRAND.openingHours.opens, closes: BRAND.openingHours.closes },
   areaServed: BRAND.serviceAreas,
   makesOffer: SERVICES.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.name } })),
-  sameAs: [BRAND.instagram, BRAND.facebook],
+  // Placeholder profile links (bare domains) are left out until the real accounts are filled in.
+  sameAs: [BRAND.instagram, BRAND.facebook].filter((u) => new URL(u).pathname !== "/"),
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -59,7 +65,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: BRAND.name },
       { property: "og:site_name", content: BRAND.name },
       { property: "og:locale", content: "zh_TW" },
-      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

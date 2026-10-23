@@ -1,5 +1,5 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { getService, SERVICES } from "@/lib/site";
+import { getService, SERVICES, SITE_URL, canonicalUrl } from "@/lib/site";
 import { PageHead, FaqList, CtaBand, LineButton, TbdNote, faqJsonLd, seo } from "@/components/site";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/services/$slug")({
       ...base,
       scripts: [
         faqJsonLd(loaderData.faqs),
-        { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", name: loaderData.name, areaServed: "新北市淡水區", provider: { "@type": "BeautySalon", name: "日日眉好紋繡所" } }) },
+        { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", name: loaderData.name, description: loaderData.description, url: canonicalUrl(`/services/${params.slug}`), areaServed: "新北市淡水區", provider: { "@type": "BeautySalon", "@id": `${SITE_URL}/#business`, name: "日日眉好紋繡所" } }) },
       ],
     };
   },

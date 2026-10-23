@@ -1,4 +1,9 @@
 // 待確認：以下聯絡資訊需由業主確認後替換
+// Public site URL. Lovable previews also point canonical/sitemap here so search engines
+// index a single domain. GitHub Pages serves pages as directories, hence the trailing "/".
+export const SITE_URL = (import.meta.env["VITE_SITE_URL"] ?? "https://www.zizieyebrows.com").replace(/\/$/, "");
+export const canonicalUrl = (path: string) => `${SITE_URL}${path.replace(/\/?$/, "/")}`;
+
 export const BRAND = {
   name: "日日眉好紋繡所",
   short: "日日眉好",
@@ -11,6 +16,7 @@ export const BRAND = {
   instagram: "https://www.instagram.com/", // 待確認
   facebook: "https://www.facebook.com/", // 待確認
   hours: "採預約制：11:30~18:00 (每周三公休)",
+  openingHours: { days: ["Monday", "Tuesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "11:30", closes: "18:00" },
 };
 
 export type Service = {

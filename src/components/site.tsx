@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 import logo from "@/assets/logo.png";
-import { BRAND, SERVICES } from "@/lib/site";
+import heroPortrait from "@/assets/hero-portrait.jpg";
+import { BRAND, SERVICES, SITE_URL, canonicalUrl } from "@/lib/site";
 
 const nav = [
   { to: "/about", label: "認識日日眉好" },
@@ -143,6 +144,8 @@ export const faqJsonLd = (items: { q: string; a: string }[]) => ({
   children: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }),
 });
 
+export const shareImage = `${SITE_URL}${heroPortrait}`;
+
 export const seo = (title: string, description: string, path: string, type = "website") => ({
   meta: [
     { title },
@@ -150,8 +153,13 @@ export const seo = (title: string, description: string, path: string, type = "we
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:type", content: type },
-    { property: "og:url", content: path },
+    { property: "og:url", content: canonicalUrl(path) },
+    { property: "og:image", content: shareImage },
+    { property: "og:image:width", content: "1280" },
+    { property: "og:image:height", content: "1920" },
+    { property: "og:image:alt", content: `紋繡師${BRAND.artist}｜${BRAND.name}` },
     { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:image", content: shareImage },
   ],
-  links: [{ rel: "canonical", href: path }],
+  links: [{ rel: "canonical", href: canonicalUrl(path) }],
 });
