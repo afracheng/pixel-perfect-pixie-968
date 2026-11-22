@@ -19,7 +19,7 @@ export const Route = createFileRoute("/contact")({
         </div>
         <address className="not-italic space-y-3">
           <h2 className="text-xl">工作室資訊</h2>
-          <p>地址：{BRAND.address}</p>
+          <p>地址：{BRAND.address}（<a href={BRAND.mapUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">在 Google 地圖查看</a>）</p>
           <p>服務地區：{BRAND.serviceAreas.join("、")}</p>
           <p>LINE：<a href={BRAND.lineUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 break-all">{BRAND.lineUrl}</a></p>
           <p>{BRAND.hours}</p>

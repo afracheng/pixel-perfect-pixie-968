@@ -50,11 +50,13 @@ const orgLd = {
   logo: logoImage,
   slogan: BRAND.motto,
   founder: { "@type": "Person", name: BRAND.artist, jobTitle: "紋繡師" },
+  hasMap: BRAND.mapUrl,
+  geo: { "@type": "GeoCoordinates", ...BRAND.geo },
   address: { "@type": "PostalAddress", streetAddress: "紅樹林路56號", addressLocality: "淡水區", addressRegion: "新北市", addressCountry: "TW" },
   openingHoursSpecification: { "@type": "OpeningHoursSpecification", dayOfWeek: BRAND.openingHours.days, opens: BRAND.openingHours.opens, closes: BRAND.openingHours.closes },
   areaServed: BRAND.serviceAreas,
   makesOffer: SERVICES.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.name } })),
-  sameAs: SOCIAL_LINKS.map((l) => l.url),
+  sameAs: [...SOCIAL_LINKS.map((l) => l.url), BRAND.mapUrl],
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({

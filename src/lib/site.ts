@@ -13,8 +13,11 @@ export const BRAND = {
   address: "新北市淡水區紅樹林路56號",
   serviceAreas: ["淡水區", "八里區", "蘆洲區", "新北市", "台北市"],
   lineUrl: "https://lin.ee/sZqwBY6",
-  instagram: "https://www.instagram.com/", // 待確認
-  facebook: "https://www.facebook.com/", // 待確認
+  instagram: "https://www.instagram.com/afra.0411/",
+  facebook: "https://www.facebook.com/afra20222",
+  // Google 商家檔案：cid 與座標取自商家地圖連結
+  mapUrl: "https://maps.google.com/?cid=5349147757618188574",
+  geo: { latitude: 25.1618453, longitude: 121.4584661 },
   hours: "採預約制：11:30~18:00 (每周三公休)",
   openingHours: { days: ["Monday", "Tuesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "11:30", closes: "18:00" },
 };
