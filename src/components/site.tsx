@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 import logo from "@/assets/logo.png";
 import heroPortrait from "@/assets/hero-portrait.jpg";
-import { BRAND, SERVICES, SITE_URL, canonicalUrl } from "@/lib/site";
+import { BRAND, SERVICES, SOCIAL_LINKS, SITE_URL, canonicalUrl } from "@/lib/site";
 
 const nav = [
   { to: "/about", label: "認識日日眉好" },
@@ -58,7 +58,7 @@ export function Footer() {
           <p>地址：{BRAND.address}</p>
           <p>LINE：<a href={BRAND.lineUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 break-all">{BRAND.lineUrl}</a></p>
           <p>{BRAND.hours}</p>
-          <p className="flex gap-4 pt-2"><a href={BRAND.instagram}>Instagram</a><a href={BRAND.facebook}>Facebook</a></p>
+          {SOCIAL_LINKS.length > 0 && <p className="flex gap-4 pt-2">{SOCIAL_LINKS.map((l) => <a key={l.label} href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a>)}</p>}
         </address>
       </div>
       <p className="border-t border-primary-foreground/20 py-5 text-center text-xs opacity-60">© {new Date().getFullYear()} {BRAND.name}｜本網站內容為美容服務資訊，不取代醫療診斷</p>
@@ -144,7 +144,18 @@ export const faqJsonLd = (items: { q: string; a: string }[]) => ({
   children: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }),
 });
 
+// Prepends 首頁 so every trail starts at the site root, matching <Crumbs>.
+export const breadcrumbJsonLd = (items: { name: string; path: string }[]) => ({
+  type: "application/ld+json",
+  children: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ name: "首頁", path: "/" }, ...items].map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: canonicalUrl(c.path) })),
+  }),
+});
+
 export const shareImage = `${SITE_URL}${heroPortrait}`;
+export const logoImage = `${SITE_URL}${logo}`;
 
 export const seo = (title: string, description: string, path: string, type = "website") => ({
   meta: [

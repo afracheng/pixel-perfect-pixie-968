@@ -1,6 +1,6 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { getArticle, getService, BRAND } from "@/lib/site";
-import { PageHead, CtaBand, TbdNote, seo } from "@/components/site";
+import { getArticle, getService, BRAND, SITE_URL, canonicalUrl } from "@/lib/site";
+import { PageHead, CtaBand, TbdNote, seo, breadcrumbJsonLd, shareImage } from "@/components/site";
 
 export const Route = createFileRoute("/knowledge/$slug")({
   loader: ({ params }) => {
@@ -12,7 +12,10 @@ export const Route = createFileRoute("/knowledge/$slug")({
     if (!loaderData) return { meta: [{ title: "找不到文章｜日日眉好紋繡所" }, { name: "robots", content: "noindex" }] };
     return {
       ...seo(`${loaderData.title}｜日日眉好紋繡所`, loaderData.description, `/knowledge/${params.slug}`, "article"),
-      scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", headline: loaderData.title, dateModified: loaderData.updated, author: { "@type": "Person", name: BRAND.artist } }) }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", headline: loaderData.title, description: loaderData.description, inLanguage: "zh-Hant-TW", image: shareImage, datePublished: loaderData.updated, dateModified: loaderData.updated, mainEntityOfPage: canonicalUrl(`/knowledge/${params.slug}`), author: { "@type": "Person", name: BRAND.artist, jobTitle: "紋繡師", url: canonicalUrl("/about") }, publisher: { "@id": `${SITE_URL}/#business` } }) },
+        breadcrumbJsonLd([{ name: "知識中心", path: "/knowledge" }, { name: loaderData.title, path: `/knowledge/${params.slug}` }]),
+      ],
     };
   },
   component: ArticlePage,

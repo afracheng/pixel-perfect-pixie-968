@@ -19,6 +19,12 @@ export const BRAND = {
   openingHours: { days: ["Monday", "Tuesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "11:30", closes: "18:00" },
 };
 
+// Placeholder profile links (bare domains) are left out until the real accounts are filled in.
+export const SOCIAL_LINKS = [
+  { label: "Instagram", url: BRAND.instagram },
+  { label: "Facebook", url: BRAND.facebook },
+].filter((l) => new URL(l.url).pathname !== "/");
+
 export type Service = {
   slug: string;
   name: string;

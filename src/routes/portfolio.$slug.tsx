@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getService } from "@/lib/site";
-import { CtaBand, PageHead, seo, TbdNote } from "@/components/site";
+import { CtaBand, PageHead, seo, TbdNote, breadcrumbJsonLd } from "@/components/site";
 import { CaseComparison } from "@/components/case-comparison";
 import { PORTFOLIO_CASES } from "@/lib/portfolio";
 
@@ -16,7 +16,8 @@ export const Route = createFileRoute("/portfolio/$slug")({
       loaderData ? `新北淡水日日眉好紋繡所的${loaderData.name}作品案例，包含顧客需求、設計考量與術後追蹤資訊。` : "此案例分類不存在，請返回作品案例選擇服務項目。",
       `/portfolio/${params.slug}`,
     );
-    return loaderData ? base : { ...base, meta: [...base.meta, { name: "robots", content: "noindex" }] };
+    if (!loaderData) return { ...base, meta: [...base.meta, { name: "robots", content: "noindex" }] };
+    return { ...base, scripts: [breadcrumbJsonLd([{ name: "作品案例", path: "/portfolio" }, { name: `${loaderData.name}案例`, path: `/portfolio/${params.slug}` }])] };
   },
   component: PortfolioCategory,
   notFoundComponent: () => (

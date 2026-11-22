@@ -12,8 +12,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Header, Footer, shareImage } from "@/components/site";
-import { BRAND, SERVICES, SITE_URL, canonicalUrl } from "@/lib/site";
+import { Header, Footer, shareImage, logoImage } from "@/components/site";
+import { BRAND, SERVICES, SOCIAL_LINKS, SITE_URL, canonicalUrl } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -47,14 +47,14 @@ const orgLd = {
   name: BRAND.name,
   url: canonicalUrl("/"),
   image: shareImage,
+  logo: logoImage,
   slogan: BRAND.motto,
   founder: { "@type": "Person", name: BRAND.artist, jobTitle: "紋繡師" },
   address: { "@type": "PostalAddress", streetAddress: "紅樹林路56號", addressLocality: "淡水區", addressRegion: "新北市", addressCountry: "TW" },
   openingHoursSpecification: { "@type": "OpeningHoursSpecification", dayOfWeek: BRAND.openingHours.days, opens: BRAND.openingHours.opens, closes: BRAND.openingHours.closes },
   areaServed: BRAND.serviceAreas,
   makesOffer: SERVICES.map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s.name } })),
-  // Placeholder profile links (bare domains) are left out until the real accounts are filled in.
-  sameAs: [BRAND.instagram, BRAND.facebook].filter((u) => new URL(u).pathname !== "/"),
+  sameAs: SOCIAL_LINKS.map((l) => l.url),
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
