@@ -3,7 +3,7 @@ import { SERVICES } from "@/lib/site";
 import { PageHead, CtaBand, TbdNote, LineButton, seo } from "@/components/site";
 
 export const Route = createFileRoute("/pricing")({
-  head: () => seo("淡水飄眉價格・霧眉費用說明｜日日眉好紋繡所", "淡水飄眉、霧眉、飄霧眉、紋眼線與霧唇的費用說明：包含哪些內容、補色安排與可能的額外費用，實際價格以個人評估為準。", "/pricing"),
+  head: () => seo("淡水飄眉價格・霧眉費用說明｜日日眉好 紋繡設計所", "淡水飄眉、霧眉、飄霧眉、紋眼線與霧唇的費用說明：包含哪些內容、補色安排與可能的額外費用，實際價格以個人評估為準。", "/pricing"),
   component: Pricing,
 });
 

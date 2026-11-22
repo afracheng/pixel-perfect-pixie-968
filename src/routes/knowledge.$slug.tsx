@@ -9,9 +9,9 @@ export const Route = createFileRoute("/knowledge/$slug")({
     return a;
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "找不到文章｜日日眉好紋繡所" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData) return { meta: [{ title: "找不到文章｜日日眉好 紋繡設計所" }, { name: "robots", content: "noindex" }] };
     return {
-      ...seo(`${loaderData.title}｜日日眉好紋繡所`, loaderData.description, `/knowledge/${params.slug}`, "article"),
+      ...seo(`${loaderData.title}｜日日眉好 紋繡設計所`, loaderData.description, `/knowledge/${params.slug}`, "article"),
       scripts: [
         { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Article", headline: loaderData.title, description: loaderData.description, inLanguage: "zh-Hant-TW", image: shareImage, datePublished: loaderData.updated, dateModified: loaderData.updated, mainEntityOfPage: canonicalUrl(`/knowledge/${params.slug}`), author: { "@type": "Person", name: BRAND.artist, jobTitle: "紋繡師", url: canonicalUrl("/about") }, publisher: { "@id": `${SITE_URL}/#business` } }) },
         breadcrumbJsonLd([{ name: "知識中心", path: "/knowledge" }, { name: loaderData.title, path: `/knowledge/${params.slug}` }]),

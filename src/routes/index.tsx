@@ -6,7 +6,7 @@ import { LineButton, CtaBand, FaqList, faqJsonLd, seo } from "@/components/site"
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    ...seo("新北淡水飄眉・霧眉推薦｜日日眉好紋繡所", "日日眉好紋繡所位於新北市淡水區，提供飄眉、霧眉、飄霧眉、紋眼線與霧唇。重視個人化眉型設計、衛生流程與術後追蹤，可 LINE 免費照片評估。", "/"),
+    ...seo("新北淡水飄眉・霧眉推薦｜日日眉好 紋繡設計所", "日日眉好 紋繡設計所位於新北市淡水區，提供飄眉、霧眉、飄霧眉、紋眼線與霧唇。重視個人化眉型設計、衛生流程與術後追蹤，可 LINE 免費照片評估。", "/"),
     scripts: [faqJsonLd(FAQS.slice(0, 5))],
   }),
   component: Index,
@@ -25,7 +25,7 @@ function Index() {
       <section className="container-page pt-12 md:pt-20">
         <div className="fade-up max-w-2xl">
           <p className="eyebrow">Tamsui · New Taipei</p>
-          <h1 className="mt-4 text-3xl leading-snug md:text-5xl">新北淡水<br />飄眉・霧眉推薦<span className="mt-3 block text-xl text-muted-foreground md:text-2xl">日日眉好紋繡所</span></h1>
+          <h1 className="mt-4 text-3xl leading-snug md:text-5xl">新北淡水<br />飄眉・霧眉推薦<span className="mt-3 block text-xl text-muted-foreground md:text-2xl">日日眉好 紋繡設計所</span></h1>
           <p className="mt-6 max-w-md text-muted-foreground">從眉型比例、個人風格到術後照護，細心規劃每一個細節，打造適合妳的自然眉型。</p>
           <p className="mt-4 text-sm">飄眉｜霧眉｜飄霧眉｜沙霧感眼線｜減法霧唇</p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -35,7 +35,7 @@ function Index() {
         </div>
       </section>
 
-      <img src={studio} alt="日日眉好紋繡所乾淨的操作環境與一次性針具" width={1280} height={912} loading="lazy" className="container-page mt-16 h-56 w-full object-cover md:h-80" />
+      <img src={studio} alt="日日眉好 紋繡設計所乾淨的操作環境與一次性針具" width={1280} height={912} loading="lazy" className="container-page mt-16 h-56 w-full object-cover md:h-80" />
 
       <section className="container-page mt-12 md:mt-16">
         <div className="max-w-2xl border-l-2 border-champagne pl-6">
@@ -53,7 +53,7 @@ function Index() {
       </section>
 
       <section className="container-page mt-12 md:mt-16">
-        <img src={heroPortrait} alt="紋繡師法兒本人｜日日眉好紋繡所" width={1280} height={1920} className="mx-auto aspect-[4/5] w-full max-w-lg object-cover object-[50%_38%]" loading="lazy" />
+        <img src={heroPortrait} alt="紋繡師法兒本人｜日日眉好 紋繡設計所" width={1280} height={1920} className="mx-auto aspect-[4/5] w-full max-w-lg object-cover object-[50%_38%]" loading="lazy" />
       </section>
 
       <section id="services" className="container-page mt-24 scroll-mt-24">

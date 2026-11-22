@@ -12,8 +12,8 @@ export const Route = createFileRoute("/portfolio/$slug")({
   },
   head: ({ loaderData, params }) => {
     const base = seo(
-      loaderData ? `${loaderData.name}作品案例｜日日眉好紋繡所` : "案例分類不存在｜日日眉好紋繡所",
-      loaderData ? `新北淡水日日眉好紋繡所的${loaderData.name}作品案例，包含顧客需求、設計考量與術後追蹤資訊。` : "此案例分類不存在，請返回作品案例選擇服務項目。",
+      loaderData ? `${loaderData.name}作品案例｜日日眉好 紋繡設計所` : "案例分類不存在｜日日眉好 紋繡設計所",
+      loaderData ? `新北淡水日日眉好 紋繡設計所的${loaderData.name}作品案例，包含顧客需求、設計考量與術後追蹤資訊。` : "此案例分類不存在，請返回作品案例選擇服務項目。",
       `/portfolio/${params.slug}`,
     );
     if (!loaderData) return { ...base, meta: [...base.meta, { name: "robots", content: "noindex" }] };

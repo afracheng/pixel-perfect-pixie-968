@@ -9,14 +9,14 @@ export const Route = createFileRoute("/services/$slug")({
     return s;
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "找不到服務｜日日眉好紋繡所" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData) return { meta: [{ title: "找不到服務｜日日眉好 紋繡設計所" }, { name: "robots", content: "noindex" }] };
     const base = seo(loaderData.title, loaderData.description, `/services/${params.slug}`, "article");
     return {
       ...base,
       scripts: [
         faqJsonLd(loaderData.faqs),
         breadcrumbJsonLd([{ name: loaderData.name, path: `/services/${params.slug}` }]),
-        { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", name: loaderData.name, description: loaderData.description, url: canonicalUrl(`/services/${params.slug}`), areaServed: "新北市淡水區", provider: { "@type": "BeautySalon", "@id": `${SITE_URL}/#business`, name: "日日眉好紋繡所" } }) },
+        { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Service", name: loaderData.name, description: loaderData.description, url: canonicalUrl(`/services/${params.slug}`), areaServed: "新北市淡水區", provider: { "@type": "BeautySalon", "@id": `${SITE_URL}/#business`, name: "日日眉好 紋繡設計所" } }) },
       ],
     };
   },
@@ -28,7 +28,7 @@ function ServicePage() {
   const others = SERVICES.filter((o) => o.slug !== s.slug);
   return (
     <>
-      <PageHead eyebrow={s.en} title={`淡水${s.name}｜日日眉好紋繡所`} intro={s.summary} crumbs={[{ label: "服務項目", to: "/", hash: "services" }, { label: s.name }]} />
+      <PageHead eyebrow={s.en} title={`淡水${s.name}｜日日眉好 紋繡設計所`} intro={s.summary} crumbs={[{ label: "服務項目", to: "/", hash: "services" }, { label: s.name }]} />
       <div className="container-page grid gap-14 py-16 md:grid-cols-[2fr_1fr]">
         <article className="prose-zh">
           <h2>{s.name}適合什麼需求？</h2>

@@ -3,7 +3,7 @@ import { BRAND } from "@/lib/site";
 import { PageHead, LineButton, TbdNote, seo } from "@/components/site";
 
 export const Route = createFileRoute("/contact")({
-  head: () => seo("聯絡與預約｜淡水紋繡工作室交通資訊｜日日眉好紋繡所", "日日眉好紋繡所位於新北市淡水區，服務淡水、八里、蘆洲及台北地區。透過 LINE 免費照片評估與預約。", "/contact"),
+  head: () => seo("聯絡與預約｜淡水紋繡工作室交通資訊｜日日眉好 紋繡設計所", "日日眉好 紋繡設計所位於新北市淡水區，服務淡水、八里、蘆洲及台北地區。透過 LINE 免費照片評估與預約。", "/contact"),
   component: () => (
     <>
       <PageHead eyebrow="Contact" title="聯絡與預約" intro="最快的方式是加入官方 LINE，傳送照片進行免費評估。" crumbs={[{ label: "聯絡預約" }]} />

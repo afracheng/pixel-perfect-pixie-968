@@ -3,7 +3,7 @@ import { ARTICLES } from "@/lib/site";
 import { PageHead, CtaBand, seo } from "@/components/site";
 
 export const Route = createFileRoute("/knowledge/")({
-  head: () => seo("紋繡知識中心｜飄眉霧眉術後照護與選擇指南｜日日眉好紋繡所", "飄眉霧眉差別、術後照護、紋眉前注意事項、眉型挑選與衛生流程，由淡水紋繡師整理的實用知識。", "/knowledge"),
+  head: () => seo("紋繡知識中心｜飄眉霧眉術後照護與選擇指南｜日日眉好 紋繡設計所", "飄眉霧眉差別、術後照護、紋眉前注意事項、眉型挑選與衛生流程，由淡水紋繡師整理的實用知識。", "/knowledge"),
   component: () => (
     <>
       <PageHead eyebrow="Journal" title="紋繡知識中心" intro="整理紋繡前後最常被問到的問題，協助妳做出安心的決定。" crumbs={[{ label: "知識中心" }]} />
